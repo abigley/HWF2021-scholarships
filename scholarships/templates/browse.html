@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Scholarships Come To You! </title>
+    </head>
+    <body>
+        <p> Browsing all available scholarships </p>
+        <p> Implement filtering functionality</p>
+        {% for scholarship in scholarships %}
+            <div>
+                <a href={{scholarship.link}} class=scholarship_title > {{scholarship.title}}</a>
+                <p> {{scholarship.description}}</p>
+            </div>
+        {% endfor %}
+    </body>
+</html>

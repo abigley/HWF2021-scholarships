@@ -1,0 +1,10 @@
+#!/bin/bash
+# scholrun
+
+# Stop on errors
+set -Eeuo pipefail
+set -x
+
+export FLASK_ENV=development
+export FLASK_APP=scholarships
+flask run --host 0.0.0.0 --port 8000
