@@ -15,8 +15,15 @@ def show_index():
 @scholarships.app.route('/browse/')
 def show_browse():
     """Display browse route."""
-    context = {}
-    return flask.render_template("browse.html")
+    ex_context = {"scholarships": [
+        {"title": "Kessler Scholarship",
+        "link": "https://lsa.umich.edu/scholarships/irene-and-morris-b-kessler-presidential-scholarship.html",
+        "description": "The Kessler Presidential Scholars Program supports a diverse community of first-generation college students at U-M."},
+        {"title": "U.P. Scholars",
+        "link": "https://lsa.umich.edu/scholarships/UPScholars.html",
+        "description": "A new community tailored to support incoming students from Michigan's Upper Peninsula."}
+    ]}
+    return flask.render_template("browse.html", **ex_context)
 
 
 @scholarships.app.route('/login/')
