@@ -26,7 +26,7 @@ def show_browse():
     return flask.render_template("browse.html", **ex_context)
 
 
-@scholarships.app.route('/login/')
+@scholarships.app.route('/accounts/login/')
 def show_login():
     """Display login route."""
     context = {}

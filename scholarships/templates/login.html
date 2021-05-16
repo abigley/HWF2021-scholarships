@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title> Scholarships Come To You! </title>
+        <title> Scholarships Come to You! </title>
     </head>
     <body>
-        <p>insert login functionality</p>
+        <div class="header">
+            <img src='/static/images/Block_M-Hex.png' style="height: 50px; width:auto">
+            <h1> MICHIGAN IT </h1>
+            <ul>
+                <li><a href="/"> Home </a></li>
+                <li><a href="/accounts/login/"> Login </a></li>
+            </ul>
+        </div>
+        <h1> Welcome to Scholarships Come to You! </h1>
+        <p> Login to see personalized results. </p>
+        <form action="/accounts/?target=/" method="post" enctype="multipart/form-data">
+            <label for="username"> Username </label>
+            <input type="text" name="username" required />
+            <br>
+            <label for="password"> Password </label>
+            <input type="password" name="password" required />
+            <input type="submit" value="login" />
+            <input type="hidden" name="operation" value="login" />
+        </form>
     </body>
 </html>

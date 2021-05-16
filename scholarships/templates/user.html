@@ -8,12 +8,12 @@
             <img src='/static/images/Block_M-Hex.png' style="height: 50px; width:auto">
             <h1> MICHIGAN IT </h1>
             <ul>
-                <li><a href="/"> Home </a></li>
-                <li><a href="/accounts/login/"> Login </a></li>
+                <li><a href="/"> Sign Out </a></li>
+                <li><a href="/u/"> {{username}} </a></li>
             </ul>
         </div>
-        <p> Browsing all available scholarships </p>
-        <p> Implement filtering functionality</p>
+        <h2> Welcome to Scholarships Come to You! </h2>
+        <p> Showing personalized scholarship results for {{username}} </p>
         {% for scholarship in scholarships %}
             <div>
                 <a href={{scholarship.link}} class=scholarship_title > {{scholarship.title}}</a>
