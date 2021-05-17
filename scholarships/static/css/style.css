@@ -1,2 +1,9 @@
+.header {
+    color:red;
+}
 
-
+h2{
+    color: cyan;
+    text-align: center;
+    font-weight: 500;
+}
