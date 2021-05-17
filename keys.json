@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "hwf2021-scholarships",
+  "private_key_id": "e8aea003811dae76ec7832babc91ba4ec12354d6",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCsL/pZjbvSBRrp\nD0qsPtQPEsKYuyH3XIpWs7evgpWRnsfbbCmrQxWFYuXfAKjqGcYiXjViaC0GYH5E\nqBev71j5InxOlKyJjeJZA1p7Kd7ceNJ4EFGlpspcbcOwsZBXUsdXDusuQPeDYnsb\nKtySkJon/4VsAat3eOZcgwypFTAeJJtt/J5bz4HWbEK5Uwy1kiwiu4eG7USCFW+w\nVDVnO8F/NwIdo6h2NDFpdJFdwV+0T3+dTHoblTgXk9BG8l3NQqODHinwJHZdjekB\nfCrgp5VOociz/7MiHstfOHmdF+/0lOgG8QDwSL+YeXHrJf9ZafsLj3IBUy7Jpore\ny1HAYkUjAgMBAAECggEAQbGcZoZ43kwsVDcNWmIuLgIOVI8xCls4PJQcxM2hmwll\nXwYJb9oMX/O3mDl8OLTUr1AaNg1hAEnYYwFu6CT9YTATFTgMC/8iGKv63XrAGIXQ\nZxZy0CyukE0gmE1msKpYe5Kpj+AhjvMH3PmhZhnddt06XlbUwKRT33/wWKJI1Xao\nJK4+gTcUqRy7kq6k2OO8HFB6OyisjI2OvkeN8v51KSHpB6tVObJBAVffG2dXG57d\nkTqC8XryuxDR/8pVteXKPTOUbqzzjZPT0hkYkHtzsFP1grG25ZJ9Er31BeHQnpvf\nfndkmlq3jVhnGMUtn8c76/ZZML+6aB8cWL0f8E8/AQKBgQDyly1Chn2kKcShD4xL\nf/VoxjuVvJkD82eaXUUgdPwigWN04sAS919+Nttzy5WF706lD+viWtvl1xRtHU3S\nQTPts1gEcaVKe0jT/+vCVq5Ytw8S5QDW2YDo2Ueg0orviCXrXpoSO5J//iWES2Ms\nDU3sdxB24/oneg1ZwEX2q3H7oQKBgQC1tIxoflGE4qh8CHAkm7QOLsoqwqQdSKsD\nxG974I1uV8+EH0hcekpU4s/TIAJMU7S1h4UplpA+KgTNgzRbtgo0NEvNQd8aP3x6\nTiM9exD86WbUiZZfOBkrKXpUeObJda8ZOBj6unPNbIrXnrwAqfdTJPTfxFi1prtX\nnfP20CUqQwKBgQCLFzLUGdif73LWBdwizdMfp8kyKVhyc3TLhP7FhU2rWxRzSC9o\nsH0IGNvqoKeyi2tEKMTOm9nJBnCnv02HZ+smNtYYdjCXa+ht5SZ/3sNICm2SH8tD\nZKIM38e55f3TKPTU5wDfw1hUGpvYJoFOGLK9Cedew4gCanCNLTjwHYzVAQKBgCH7\nt3rfjR1+SqaP6XFfUYiJhbQDnTAA5EMbHQKdF7Z4Y85BD4aENJy1osrIpMVjrlt5\nEhWaHDYUI7vP+x3f6P6kfTzRQgmlsAEr1flsp9u1R08ewGnkkwh4hHGB/x/Ui7/6\ntulFr9zOnRUAkgbJwwDg249yKGko2sbjOrqBaUIDAoGAF2syVTLk00FFLrDc0bXI\nMKrFz/vsvkciKSBlJe+rMhu/psNfgd5moVpP4V8MhaJf2LHAkT2hTValqDJ3kQ5q\nSbYZKP/3/lvtAADNefHaoVVTXKOK/DaOnjXI/C2rM8PGKvyiZV5UY7talfshJY31\nd/dLTHrQZVOqs3sIxeu4a/k=\n-----END PRIVATE KEY-----\n",
+  "client_email": "hwf-2021-scholarships@hwf2021-scholarships.iam.gserviceaccount.com",
+  "client_id": "115193358061619985574",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/hwf-2021-scholarships%40hwf2021-scholarships.iam.gserviceaccount.com"
+}
