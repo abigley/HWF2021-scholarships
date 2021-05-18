@@ -1,28 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Include in <head> to load fonts from Google -->
+        <link href='https://fonts.googleapis.com/css?family=Oswald:400' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+
         <title> Scholarships Come to You! </title>
         <link rel="stylesheet" href="/../static/css/style.css">
     </head>
+
     <body>
+        <!-- Add icon library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
         <div class="header">
             <img src='/static/images/Block_M-Hex.png' style="height: 50px; width:auto">
             <h1> MICHIGAN IT </h1>
             <ul>
-                <li><a href="/"> Home </a></li>
-                <li><a href="/accounts/login/"> Login </a></li>
+                <button onclick="location.href='/'" class="btn"><i class="fa fa-home"></i> Home</button>
+                <a href="/accounts/login/" class="button"> Login </a>
             </ul>
         </div>
+
         <h2> Welcome to Scholarships Come to You! </h2>
-        <p> Login to see personalized results. </p>
+
+        <p id = "text1"> Login to see personalized results. </p>
+
         <form action="/accounts/?target=/" method="post" enctype="multipart/form-data">
             <label for="username"> Username </label>
             <input type="text" name="username" required />
+            <br>
             <br>
             <label for="password"> Password </label>
             <input type="password" name="password" required />
             <input type="submit" value="login" />
             <input type="hidden" name="operation" value="login" />
         </form>
+
     </body>
 </html>
