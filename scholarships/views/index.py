@@ -40,21 +40,40 @@ def show_user():
     user = flask.session.get("user_id")
     if user is None:
         return flask.redirect(flask.url_for("show_login"))
+    connection = scholarships.model.get_db()
+    cur = connection.execute(
+        "SELECT * "
+        "FROM users "
+        "WHERE username = ?",
+        (user,)
+    )
+    user_info = cur.fetchone()
+    print(user_info)
+    cur = connection.execute(
+        "SELECT tag "
+        "FROM tags "
+        "WHERE username = ?",
+        (user,)
+    )
+    tags = cur.fetchall()
+    print(tags)
     scholarship_list = google_sheets_import()
-    womens_schols = []
+    user_schols = []
     for scholarship in scholarship_list:
-        if "Women" in scholarship["Tags"]:
-            womens_schols.append(scholarship)
-    ex_context = {"username": user, "scholarships": 
-        [
-        {"title": "Kessler Scholarship",
-        "link": "https://lsa.umich.edu/scholarships/irene-and-morris-b-kessler-presidential-scholarship.html",
-        "description": "The Kessler Presidential Scholars Program supports a diverse community of first-generation college students at U-M."},
-        {"title": "U.P. Scholars",
-        "link": "https://lsa.umich.edu/scholarships/UPScholars.html",
-        "description": "A new community tailored to support incoming students from Michigan's Upper Peninsula."}
-    ]}
-    context = {"username": user, "scholarships": womens_schols}
+        if user_info["class"] in scholarship["Degree Type"]:
+            if user_info["residency"] in scholarship["Citizenship"] or "No specifications" in scholarship["Citizenship"]:
+                if len(scholarship["Tags"]) == 0:
+                    user_schols.append(scholarship)
+                else:
+                    match = False;
+                    for tag in tags:
+                        if tag["tag"] in scholarship["Tags"]:
+                            match = True
+                    if match:
+                        user_schols.append(scholarship)
+
+    
+    context = {"username": user, "fullname": user_info["fullname"], "scholarships": user_schols}
     return flask.render_template("user.html", **context)
 
 
@@ -63,11 +82,56 @@ def login_post():
     username = flask.request.form["username"]
     password = flask.request.form["password"]
     if username is None or password is None:
-        return flask.redirect(flask.request.args.get('target'))
-    else:
-        flask.session["user_id"] = username
-        return flask.redirect(flask.url_for("show_user"))
+        return flask.redirect(flask.url_for('show_login'))
+    connection = scholarships.model.get_db()
+    cur = connection.execute(
+        "SELECT password "
+        "FROM users "
+        "WHERE username = ?",
+        (username,)
+    )
+    real_password = cur.fetchone()['password']
+    if real_password is None:
+        return flask.redirect(flask.url_for('show_login'))
+    if real_password != password:
+        return flask.redirect(flask.url_for('show_login'))
+    flask.session["user_id"] = username
+    return flask.redirect(flask.url_for("show_user"))
 
+@scholarships.app.route('/browse/', methods=['POST'])
+def filter_browse():
+    target_class = (flask.request.form["class"])
+    target_GPA = (flask.request.form["GPA"])
+    target_citizenship = (flask.request.form["citizenship"])
+    target_tag = (flask.request.form["tag"])
+    scholarship_list = google_sheets_import()
+    target_schols = []
+    if target_class != "":
+        for scholarship in scholarship_list:
+            if target_class in scholarship["Degree Type"]:
+                target_schols.append(scholarship)
+    else:
+        for scholarship in scholarship_list:
+            target_schols.append(scholarship)
+    scholarship_list = target_schols
+    target_schols = []
+    if target_GPA != "":
+        pass
+    if target_citizenship != "":
+        for scholarship in scholarship_list:
+            if target_citizenship in scholarship["Citizenship"]:
+                target_schols.append(scholarship)
+        scholarship_list = target_schols
+        target_schols = []
+    if target_tag != "":
+        for scholarship in scholarship_list:
+            if target_tag in scholarship["Tags"]:
+                target_schols.append(scholarship)
+    else: 
+        target_schols = scholarship_list
+    print(target_schols)
+    context = {"scholarships": target_schols}
+    return flask.render_template('browse.html', **context)
 
 def google_sheets_import():
     SERVICE_ACCOUNT_FILE = 'keys.json'
@@ -94,5 +158,4 @@ def google_sheets_import():
             if len(values[i]) > j:
                 val_dict[title] = values[i][j]
         val_list.append(val_dict)
-    print(val_list)
     return val_list

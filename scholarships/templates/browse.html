@@ -1,22 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link href='https://fonts.googleapis.com/css?family=Oswald:400' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+
         <title> Scholarships Come to You! </title>
         <link rel="stylesheet" href="/../static/css/style.css">
     </head>
     <body>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <div class="header">
             <img src='/static/images/Block_M-Hex.png' style="height: 50px; width:auto">
             <h1> MICHIGAN IT </h1>
-            <ul class="nav_bar">
-                <li><a href="/"> Home </a></li>
-                <li><a href="/accounts/login/"> Login </a></li>
+            <ul>
+                <button onclick="location.href='/'" class="btn"><i class="fa fa-home"></i> Home</button>
+                <a href="/accounts/login/" class="button"> Login </a>
             </ul>
         </div>
         <h2> Welcome to Scholarships Come to You! </h2>
-        <p> Browsing all available scholarships. </p>
-        <p> <a href='/accounts/login/'>Login</a> to see personalized results.</p>
-        <p> Filter by </p>
+        <p class="scholarship_description"> Browsing all available scholarships. <a href='/accounts/login/'>Login</a> to see personalized results.</p>
+        <p class="scholarship_description"> Filter by </p>
+        <div class="filter"> 
+            <form name="form1" id="form1" action="/browse/?target=/browse/" method="post" enctype="multipart/form-data">
+                Class: <select name="class" id="class">
+                <option value="Freshman" selected="selected"> Freshman </option>
+                <option value="Sophomore" selected="selected"> Sophomore </option>
+                <option value="Junior" selected="selected"> Junior </option>
+                <option value="Senior" selected="selected"> Senior </option>
+                <option value="PhD" selected="selected"> PhD </option>
+                <option value="Master's" selected="selected"> Master's </option>
+                <option value="Postdoc" selected="selected"> Postdoc </option>
+                <option value="" selected="selected"> No Class Selected </option>
+                </select>
+                <br><br>
+                GPA: <select name="GPA" id="GPA">
+                <option value="3.5" selected="selected"> &gt 3.5 </option>
+                <option value="3.0" selected="selected"> &gt 3.0 </option>
+                <option value="2.5" selected="selected"> &gt 2.5 </option>
+                <option value="" selected="selected"> No GPA Selected </option>
+                </select>
+                <br><br>
+                Residency/Citizenship: <select name="citizenship" id="citizenship">
+                <option value="U.S. Citizenship" selected="selected"> U.S. Citizen </option>
+                <option value="Permanent Resident" selected="selected"> Permanent Resident </option>
+                <option value="Permanent Resident + Racial/Ethnic Specifier(s)" selected="selected"> Permanent Resident + Racial/Ethnic Specifier(s) </option>
+                <option value="Permanent resident of the state of Michigan" selected="selected"> Permanent resident of the state of Michigan </option>
+                <option value="No specifications" selected="selected"> No specifications </option>
+                <option value="International" selected="selected"> International </option>
+                <option value="" selected="selected"> No Tag Selected </option>
+                </select>
+                <br><br>
+                Tag: <select name="tag" id="tag">
+                <option value="Women" selected="selected"> Women </option>
+                <option value="URM" selected="selected"> URM </option>
+                <option value="Incoming" selected="selected"> Incoming </option>
+                <option value="International" selected="selected"> International </option>
+                <option value="" selected="selected"> No Tag Selected </option>
+                </select>
+                <br><br>
+                <input type="submit" value="Submit"> 
+            </form>
+        </div>
+        <br><br><br>
 
         {% for scholarship in scholarships %}
             <div>

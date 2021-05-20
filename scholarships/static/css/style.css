@@ -12,6 +12,7 @@
 }
 
 .scholarship_title {
+    font-family: 'Montserrat';
     font-size: 20px;
     text-decoration: none;
     color: #00274C;
@@ -20,6 +21,8 @@
 }
 
 .scholarship_description {
+    font-family: 'Montserrat';
+    font-size: 15px;
     padding-left: 15px;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -71,7 +74,7 @@ h2{
     font-family: 'Montserrat';
     cursor: pointer; /* Mouse pointer on hover */
     position:absolute;
-    top: 10px;
+    top: 20px;
     right:0;
 }
   
@@ -87,10 +90,12 @@ a.button{
     color: #FFCB05; /* White text */
     padding: 12px 16px; /* Some padding */
     font-size: 16px; /* Set a font size */
+    font-family: 'Montserrat';
     cursor: pointer; /* Mouse pointer on hover */
     position:absolute;
-    top: 10px;
+    top: 20px;
     right: 100px;
+    text-decoration:none;
 }
 
 a.button:hover{
@@ -116,7 +121,7 @@ a.button:hover{
 
 /* Login ------------------------------------------------------------------------------------ */
 
-#text1{
+.text1{
     margin-top: 70px;
     margin-left: 50px;
     margin-bottom: 30px;
@@ -141,4 +146,8 @@ input {
 
 #login_but{
     margin-left: 5px;
+}
+
+.filter {
+    padding-left: 12px;
 }
