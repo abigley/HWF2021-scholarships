@@ -19,7 +19,9 @@
             </ul>
         </div>
         <h2> Welcome to Scholarships Come to You! </h2>
-        <p> Showing personalized scholarship results for {{username}} </p>
+        <br>
+        <p class="text2"> Showing personalized scholarship results for {{fullname}}. </p>
+        <br><br>
         {% for scholarship in scholarships %}
             <div>
                 {% if scholarship.Website %}
@@ -28,6 +30,7 @@
                     <p class="scholarship_title" > {{scholarship.Name}}</p>
                 {% endif %}
                 <p class="scholarship_description"> {{scholarship.Description}}</p>
+                <br><br>
             </div>
         {% endfor %}
     </body>

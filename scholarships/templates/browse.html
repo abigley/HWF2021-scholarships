@@ -18,8 +18,10 @@
             </ul>
         </div>
         <h2> Welcome to Scholarships Come to You! </h2>
-        <p class="scholarship_description"> Browsing all available scholarships. <a href='/accounts/login/'>Login</a> to see personalized results.</p>
-        <p class="scholarship_description"> Filter by </p>
+        <br>
+        <p class="text2"> Browsing all available scholarships. <a href='/accounts/login/'>Login</a> to see personalized results.</p>
+        <br>
+        <p class="text2"> Filter by </p>
         <div class="filter"> 
             <form name="form1" id="form1" action="/browse/?target=/browse/" method="post" enctype="multipart/form-data">
                 Class: <select name="class" id="class">
@@ -71,7 +73,7 @@
                     <p class="scholarship_title" > {{scholarship.Name}}</p>
                 {% endif %}
                 <p class="scholarship_description"> {{scholarship.Description}}</p>
-                <br>
+                <br><br>
             </div>
         {% endfor %}
     </body>
